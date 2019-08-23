@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    image: avorion
+    restart: always
+    ports:
+      - 27000:27000
+      - 27000:27000/udp
+      - 27003:27003
+      - 27003:27003/udp
+      - 27020:27020
+      - 27021:27021
+    volumes:
+      - /var/avorion/avorion_galaxy:/root/.avorion/galaxies/avorion_galaxy
+    network_mode: "bridge"
+    build: ./
